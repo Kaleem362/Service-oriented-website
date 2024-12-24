@@ -1,0 +1,110 @@
+* {
+  font-family: Robot, sans-serif;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0%;
+}
+.services_container {
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    rgb(184, 180, 180) 30%,
+    rgb(255, 255, 255) 70%
+  );
+  border: none;
+  outline: none;
+  flex-wrap: wrap;
+}
+.services_container h5 {
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  padding: 25px;
+  padding-top: 20px;
+}
+.services_container h1 {
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: -3px;
+  font-size: 62px;
+  line-height: 50px;
+}
+.service_tile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 120px;
+  /* padding: 10px 30px; */
+  margin: 20px auto;
+}
+
+.service_no {
+  font-weight: bold;
+  font-size: 20px;
+}
+.service_name {
+  font-weight: bold;
+  font-size: 20px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  width: 170px;
+}
+
+.service_image {
+  height: 100px;
+  width: 250px;
+  overflow: hidden;
+  margin: 0px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.service_image img {
+  width: 200px;
+  height: 100px;
+  overflow: hidden;
+  margin: 0px 15px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.service_description {
+  width: 350px;
+  /* width: fit-content; */
+  overflow: auto;
+  height: 100px;
+  text-align: left;
+}
+.service_description::-webkit-scrollbar {
+  width: 10px;
+  background-color: lightgray;
+  color: white; /* Width of the scrollbar */
+}
+.service_contact_button {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.service_contact_button button {
+  padding: 6px 15px;
+  background-color: #ffffff;
+  color: black;
+  font-family: Roboto, sans-serif;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  transition: 0.2s all ease;
+}
+.service_contact_button button:hover {
+  color: white;
+  background-color: rgb(97, 106, 109);
+  /* border: 1px solid black; */
+}
+.service_contact_button button img {
+  width: 20px;
+  height: 20px;
+  margin: 0px 5px;
+  width: 18px;
+}
