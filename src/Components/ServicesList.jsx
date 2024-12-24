@@ -2,6 +2,7 @@ import React from "react";
 import graphicsimage from "../servicesimage/graphicsDesign.jpg";
 import CVimage from "../servicesimage/CVwriting.jpg";
 import webdevimage from "../servicesimage/webdevelopment.jpg";
+import websitedevelopment from "../servicesimage/DesktopApplication.jpg";
 import MobileAppsimage from "../servicesimage/reactnative.jpg";
 import Service from "./Service";
 
@@ -35,7 +36,7 @@ function ServicesList() {
     },
     {
       servicename: "Desktop Applications",
-      serviceimage: webdevimage,
+      serviceimage: websitedevelopment,
       servicedescr:
         "Bring your vision to life with web application development team, delivering responsive, user-friendly, and innovative solutions customized to meet your unique requirements.",
     },
