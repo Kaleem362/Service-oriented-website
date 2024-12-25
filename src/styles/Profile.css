@@ -1,0 +1,38 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+.user-header {
+  font-size: 32px;
+  border-bottom: 1px solid gray;
+  color: black;
+}
+.profile-container {
+  background-image: linear-gradient(
+    to right,
+    rgb(184, 180, 180) 30%,
+    rgb(255, 255, 255) 70%
+  );
+  width: 100%;
+  height: 100vh;
+  padding: 40px;
+}
+.list-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid black;
+  flex-direction: column;
+}
+.list-container li {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid grey;
+  text-align: flex-start;
+  color: black;
+}

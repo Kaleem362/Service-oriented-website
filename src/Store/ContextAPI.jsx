@@ -19,6 +19,7 @@ export const StoreProvider = ({ children }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [user, setUser] = useState(null);
   const [message, setMessage] = useState("");
+  const [isloading, setisloading] = useState("");
   const navigate = useNavigate();
 
   // Handle login
@@ -28,7 +29,7 @@ export const StoreProvider = ({ children }) => {
     setError(null);
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/Home"); // Redirect to Home on successful login
+      navigate("/Home");
     } catch (err) {
       handleError(err);
     } finally {
@@ -42,7 +43,7 @@ export const StoreProvider = ({ children }) => {
     setError(null);
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/Home"); // Redirect to Home on successful signup
+      navigate("/Home");
       setEmail("");
       setPassword("");
     } catch (err) {
@@ -54,7 +55,7 @@ export const StoreProvider = ({ children }) => {
   const userLogOut = async () => {
     try {
       await signOut(auth);
-      navigate("/LoginPage"); // Redirect to LoginPage on logout
+      navigate("/LoginPage");
       setTimeout(() => {
         alert("Successfully Logged out");
       }, 2000);
@@ -63,7 +64,6 @@ export const StoreProvider = ({ children }) => {
     }
   };
 
-  // Helper function to handle errors
   const handleError = (err) => {
     if (err.code === "auth/user-not-found") {
       setError("User not found.");
@@ -80,29 +80,26 @@ export const StoreProvider = ({ children }) => {
     }
   };
 
-  // Persist user on site revisit using Firebase auth state observer
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setIsAuthenticated(!!currentUser);
+      setisloading(false); // Set loading to false once we have the auth state
 
-      // Check if the user is authenticated
+      const publicRoutes = ["/loginpage", "/signup"];
+      const currentPath = window.location.pathname.toLowerCase();
+
       if (currentUser) {
-        // If the user is already logged in, redirect them to "/Home", but only if they are not already there
-        if (window.location.pathname !== "/home") {
+        if (publicRoutes.includes(currentPath)) {
           navigate("/Home");
         }
       } else {
-        // If no user, allow access to Login and Signup pages, and prevent redirection to LoginPage when already on LoginPage
-        if (
-          window.location.pathname !== "/loginpage" &&
-          window.location.pathname !== "/signup"
-        ) {
+        if (!publicRoutes.includes(currentPath)) {
           navigate("/LoginPage");
         }
       }
     });
 
-    // Cleanup the observer when the component unmounts
     return () => unsubscribe();
   }, [navigate]);
 
@@ -123,6 +120,7 @@ export const StoreProvider = ({ children }) => {
         HeroPlateImage,
         message,
         setMessage,
+        isloading,
       }}
     >
       {children}

@@ -10,7 +10,7 @@ function Header() {
     <>
       <header className="d-flex flex-wrap justify-content-center py-3 px-3">
         <Link
-          href="/Home"
+          to="/Home"
           className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
         >
           <svg className="bi me-2" width="40" height="32">
@@ -37,23 +37,28 @@ function Header() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/Home" className="nav-link">
+            <Link to="/Projects" className="nav-link">
               Projects
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/Home" className="nav-link">
+            <Link to="/Pricing" className="nav-link">
               Pricing
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/Home" className="nav-link">
+            <Link to="/About" className="nav-link">
               About us
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/Home" className="nav-link">
+            <Link to="/Contact" className="nav-link">
               Contact
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/profile" className="nav-link">
+              Profile
             </Link>
           </li>
           <li className="nav-item">

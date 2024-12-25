@@ -4,6 +4,7 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style-type: none;
+  font-family: Manrope, sans-serif;
 }
 Header {
   background-image: linear-gradient(
@@ -18,6 +19,13 @@ Header {
 }
 .nav-link {
   color: black;
+  font-family: Manrope;
+  /* font-weight: bold; */
+  transition: 0.2s all ease;
+}
+.nav-link:hover {
+  color: black;
+  transform: scale(1.04);
 }
 /* .nav-link:hover {
   font-weight: bolder;
